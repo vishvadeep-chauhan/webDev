@@ -16,3 +16,6 @@ console.table([ accountId, accountEmail, accountPassword, accountCity ]);
 
 // Prefer not to use 'var' because of block scope issues; use 'let' and 'const' instead.
 
+
+
+
