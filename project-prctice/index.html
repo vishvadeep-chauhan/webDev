@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Practice Card</title>
+  <style>
+    .alert { padding: 10px; border: 1px solid orange; }
+    #score { color: green; font-weight: bold; }
+    #status { color: blue; }
+    ul { margin-top: 10px; }
+    #greeting { font-size: 1.2em; margin-bottom: 10px;}
+  </style>
+</head>
+<body>
+  <div class="result">This is the result message.</div>
+  <div id="score">5</div>
+  <h2>Main Title</h2>
+  
+  <input id="playerName" type="text" placeholder="Enter your name">
+  <input class="answer" type="text" placeholder="Type your answer">
+  <input type="email" placeholder="Enter email">
+  
+  <div class="alert">Warning!</div>
+  <div id="status">Inactive</div>
+  
+  <ul>
+    <li>List Item 1</li>
+    <li>List Item 2</li>
+  </ul>
+  
+  <span id="greeting">Hello Vishv!</span>
+  
+  <script>
+    // Write your JavaScript code for each practice below
+    // Example:
+    // console.log(document.querySelector('.result').textContent);
+
+    const result =  document.querySelector('.result').textContent;
+
+    console.log(result);
+
+    
+const score = document.querySelector('#score').textContent = "Level Up!"; 
+
+
+
+console.log(document.querySelector('h2').textContent)
+
+
+document.querySelector('#playerName').value = "Vishv";
+
+const answer = document.querySelector('.answer').value ; 
+
+console.log(answer);
+
+document.querySelector('.alert').style.backgroundColor = "yellow"
+
+
+    
+  </script>
+</body>
+</html>
