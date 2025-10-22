@@ -24,6 +24,8 @@ document.querySelector('.check').addEventListener('click', function () {
   const guess = Number(document.querySelector('.guess').value);
   console.log('Guess:', typeof guess);
 
+  // when there is no input ,
+
   if (!guess) {
     console.log(
       (document.querySelector('.message').textContent = 'NO Number \u26D4')
@@ -38,10 +40,17 @@ document.querySelector('.check').addEventListener('click', function () {
       );
       console.log((document.querySelector('.score').textContent = 0));
     }
+
+    // where player win
   } else if (guess === secretNumber) {
     console.log(
       (document.querySelector('.message').textContent = 'Correct  Number')
     );
+
+    document.querySelector('body').style.backgroundColor = '#60b347';
+    document.querySelector('.number').style.width = '30rem';
+
+    // when gauss is too High .
   } else if (guess > secretNumber) {
     console.log(
       (document.querySelector('.message').textContent = 'too Big NUMber')
@@ -57,6 +66,8 @@ document.querySelector('.check').addEventListener('click', function () {
       );
       console.log((document.querySelector('.score').textContent = 0));
     }
+
+    // when gauss is too low
   } else if (guess < secretNumber) {
     console.log(
       (document.querySelector('.message').textContent = 'too low num ')
