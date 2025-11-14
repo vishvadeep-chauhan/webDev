@@ -16,7 +16,7 @@
 
 let score = 20;
 // Example: later you’ll add a click handler (covered in next lecture)
-const secretNumber = Math.trunc(Math.random() * 20) + 1;
+let secretNumber = Math.trunc(Math.random() * 20) + 1;
 // console.log(number)
 
 document.querySelector('.check').addEventListener('click', function () {
@@ -85,3 +85,8 @@ document.querySelector('.check').addEventListener('click', function () {
     }
   }
 });
+
+
+document.querySelector('.again').addEventListener('click' , function(){
+  score = 20;
+})
