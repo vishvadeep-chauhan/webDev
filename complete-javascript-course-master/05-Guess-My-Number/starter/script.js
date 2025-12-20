@@ -33,22 +33,16 @@ document.querySelector('.check').addEventListener('click', function () {
     document.querySelector('body').style.backgroundColor = '#60b347';
     document.querySelector('.number').style.width = '30rem';
 
-    // when guess too high
-  } else if (guess > secretNumber) {
-    if (score > 1) {
-      document.querySelector('.message').textContent = 'too High ';
-
-      score--;
-      document.querySelector('.score').textContent = score;
-    } else {
-      document.querySelector('.message').textContent = 'you lost the game ';
-      document.querySelector('.score').textContent = 0;
+    if (score > highScore) {
+      highScore = score;
+      document.querySelector('.highscore').textContent = highScore;
     }
 
-    // when guess too low
-  } else if (guess < secretNumber) {
+    // when guess is wrong high
+  } else if (guess !== secretNumber) {
     if (score > 1) {
-      document.querySelector('.message').textContent = 'too Low ';
+      document.querySelector('.message').textContent =
+        guess > secretNumber ? 'Too High' : 'Too Low';
 
       score--;
       document.querySelector('.score').textContent = score;
@@ -58,6 +52,32 @@ document.querySelector('.check').addEventListener('click', function () {
     }
   }
 });
+// when guess is too high
+
+//   else if (guess > secretNumber) {
+//     if (score > 1) {
+//       document.querySelector('.message').textContent = 'too High ';
+
+//       score--;
+//       document.querySelector('.score').textContent = score;
+//     } else {
+//       document.querySelector('.message').textContent = 'you lost the game ';
+//       document.querySelector('.score').textContent = 0;
+//     }
+
+//     // when guess too low
+//   } else if (guess < secretNumber) {
+//     if (score > 1) {
+//       document.querySelector('.message').textContent = 'too Low ';
+
+//       score--;
+//       document.querySelector('.score').textContent = score;
+//     } else {
+//       document.querySelector('.message').textContent = 'you lost the game ';
+//       document.querySelector('.score').textContent = 0;
+//     }
+//   }
+// });
 
 // Coding Challenge #1
 /*
@@ -71,10 +91,9 @@ and number width (15rem)
 GOOD LUCK */
 
 document.querySelector('.again').addEventListener('click', function () {
-   score = 20;
-   
-  secretNumber = Math.trunc(Math.random() * 20) + 1;
+  score = 20;
 
+  secretNumber = Math.trunc(Math.random() * 20) + 1;
 
   document.querySelector('.score').textContent = score;
 
@@ -85,5 +104,3 @@ document.querySelector('.again').addEventListener('click', function () {
   document.querySelector('body').style.backgroundColor = '#222';
   document.querySelector('.number').style.width = '15rem';
 });
-
-
