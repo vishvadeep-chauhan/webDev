@@ -9,7 +9,12 @@ const btnNew = document.querySelector('.btn--new');
 const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
 
-const current0El = document.querySelector()
+const current0El = document.getElementById('current--0');
+const current1El = document.getElementById('current--1');
+
+
+
+
 
 score0El.textContent = 0;
 score1El.textContent = 0;
@@ -17,3 +22,30 @@ diceEl.classList.add('hidden');
 
 
 
+// OUTSIDE event listener (top of file)
+let currentScore = 0;
+
+
+btnRoll.addEventListener('click', function(){
+    // 1. Generate random dice roll
+const dice = Math.trunc(Math.random() * 6) + 1;
+
+
+  // 2. Display dice
+diceEl.textContent.remove('hidden');
+diceEl.src = `dice-${dice}.png`
+
+  // 3. Check for rolled 1: if true, switch to next player
+
+if(dice !== 1){
+    currentScore += dice;
+    current0El.textContent = currentScore;
+
+}else {
+    // Switch to next player
+
+
+}
+
+
+})
