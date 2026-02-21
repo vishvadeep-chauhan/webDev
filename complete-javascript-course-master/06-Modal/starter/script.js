@@ -8,7 +8,7 @@ const btnsOpenModal = document.querySelectorAll('.show-modal')
 console.log(btnsOpenModal);
 // --------------------------------------------
 // 84. working with classes 
-// ------------------------------------------------
+// --------------------------------------------
 
 
 // for(let i = 0; i < btnsOpenModal.length; i++ ){
@@ -46,7 +46,7 @@ btnCloseModal.addEventListener('click', closeModal);
 
 // ------------------------------------
 // 85. Handling an "Esc" Keypress Event
-// ------------------------------------------------
+// ------------------------------------
 
 document.addEventListener('keydown', function(e) {
     // console.log(e)
