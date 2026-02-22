@@ -70,22 +70,39 @@
 // console.log(bills, tips , totals)
 
 
-// const jonas = {
-//   firstName: 'jonas',
-//   lastName: 'schmedtmann',
-//   age: 2037 - 1991,
-//   job: 'teacher',
-//   friends: ['micheal', 'peter', 'Steven']
-// };
+const jonas = {
+  firstName: 'jonas',
+  lastName: 'schmedtmann',
+  age: 2037 - 1991,
+  job: 'teacher',
+  friends: ['micheal', 'peter', 'Steven']
+};
+
+console.log(jonas)
+console.log(jonas.lastName)
+console.log(jonas['lastName'])
+
+const nameKey = 'Name';
+// console.log(jonas['fist' + nameKey])
+// console.log(jonas['last'] + nameKey)
+
+const ppt = prompt('what ?');
+console.log(jonas[ppt])
 
 
-const person = {
-  firstName: "Vishv",
-  lastName: "Deep", 
-  birthYear: 1998,
-  job: "student",
-  friends: ["Aman", "Rahul", "Neeraj"]
 
-}
 
-console.log(`${person.firstName} has ${person.friends.length} friends, and his best friend is ${person.friends[0]}` )
+
+
+// const person = {
+//   firstName: "Vishv",
+//   lastName: "Deep", 
+//   birthYear: 1998,
+//   job: "student",
+//   friends: ["Aman", "Rahul", "Neeraj"]
+
+// }
+
+// console.log(`${person.firstName} has ${person.friends.length} friends, and his best friend is ${person.friends[0]}` )
+
+
