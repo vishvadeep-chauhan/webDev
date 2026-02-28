@@ -109,22 +109,22 @@
 
 
 
-const jonas = {
-  firstName: 'Jonas',
-  lastName: 'Schmedtmann',
-  age: 2037 - 1991,
-  job: 'teacher',
-  friends: ['Michael', 'Peter', 'Steven']
-};
+// const jonas = {
+//   firstName: 'Jonas',
+//   lastName: 'Schmedtmann',
+//   age: 2037 - 1991,
+//   job: 'teacher',
+//   friends: ['Michael', 'Peter', 'Steven']
+// };
 
 
-console.log(jonas.age);
-console.log(jonas['firstName']);
+// console.log(jonas.age);
+// console.log(jonas['firstName']);
 
-const nameKey = 'Name';
+// const nameKey = 'Name';
 
-console.log(jonas['first' + nameKey]);
-console.log(jonas['last' + nameKey]);
+// console.log(jonas['first' + nameKey]);
+// console.log(jonas['last' + nameKey]);
 
 // const interestedIn = prompt(
 //   'What do you want to know about Jonas? Choose between firstName, lastName, age, job, friends'
@@ -136,5 +136,30 @@ console.log(jonas['last' + nameKey]);
 //   console.log("wrong request")
 // }
 
-console.log(`${jonas.firstName} has ${jonas.friends.length} friends and his best friend is name ${jonas.friends[0]}`)
+// console.log(`${jonas.firstName} has ${jonas.friends.length} friends and his best friend is name ${jonas.friends[0]}`)
+
+const jonas = {
+  firstName: 'Jonas',
+  lastName: 'Schmedtmann',
+  age: 2037 - 1991,
+  birthYear: 1991,
+  job: 'teacher',
+  friends: ['Michael', 'Peter', 'Steven'],
+  hasDriversLince: true,
+
+  calcAge: function (){
+    console.log(this)
+    return  2037 - this.birthYear;
+  }
+
+
+};
+
+
+console.log(jonas.calcAge());
+
+// console.log(jonas['calcAge'](1991));
+
+
+
 
