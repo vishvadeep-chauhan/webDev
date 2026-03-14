@@ -1,47 +1,77 @@
-'use strict';
 
-// Data needed for a later exercise
-const flights =
-  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
+// const restaurant = {
+//   name: 'Classico Italiano',
+//   location: 'Via Angelo Tavanti 23, Firenze, Italy',
+//   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+//   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+//   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
-const italianFoods = new Set([
-  'pasta',
-  'gnocchi',
-  'tomatoes',
-  'olive oil',
-  'garlic',
-  'basil',
-]);
+//   // ES6 enhanced object literals
 
-const mexicanFoods = new Set([
-  'tortillas',
-  'beans',
-  'rice',
-  'tomatoes',
-  'avocado',
-  'garlic',
-]);
+//   order:  function(starterIndex, mainIndex){
+//     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]]
 
-// Data needed for first part of the section
-const restaurant = {
-  name: 'Classico Italiano',
-  location: 'Via Angelo Tavanti 23, Firenze, Italy',
-  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
-  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
-  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+//   }
+  
 
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 11,
-      close: 23,
-    },
-    sat: {
-      open: 0, // Open 24 hours
-      close: 24,
-    },
-  },
-};
+
+// }
+
+
+// // Array Destructuring
+
+// const arr = [1,2,3]
+// console.log(arr)
+
+// const a = arr[0]
+// const b = arr[1]
+// const c = arr[2]
+
+// console.log(a)
+// console.log(b)
+// console.log(c)
+
+
+// const [x,y,z] = arr;
+
+// // [] on the left side → means destructuring
+
+// console.log(x)
+// console.log(y)
+// console.log(z)
+
+
+// const [l , m] = [10,20,30,]
+
+// const categories = ["Italian","Pizzeria","Vegetarian","Organic"]
+
+// const [main, , secondary, ,] = categories
+
+// console.log(categories)
+// console.log(main)
+// console.log(secondary)
+
+// let main1 = "Italian";
+// let secondary1 = "Vegetarian";
+
+// // const temp = main1;
+// // main1 = secondary1;
+// // secondary1 = temp;
+
+// [main1 , secondary1 ] = [secondary1, main1]
+
+// console.log(main1 , secondary1)
+
+// const [starter, mainCourse] = restaurant.order(2,0)
+// console.log(starter, mainCourse);
+
+
+//  const nested = [2, 4, [5,6]]
+// //  const [i, ,j] = nested
+
+// //  console.log(i, j)
+// const [i, ,[j,k]] = nested;
+
+// console.log(i,j,k);
+
+
