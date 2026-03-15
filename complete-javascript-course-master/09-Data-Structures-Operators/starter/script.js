@@ -1,78 +1,78 @@
 
-// // const restaurant = {
-// //   name: 'Classico Italiano',
-// //   location: 'Via Angelo Tavanti 23, Firenze, Italy',
-// //   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
-// //   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
-// //   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+// const restaurant = {
+//   name: 'Classico Italiano',
+//   location: 'Via Angelo Tavanti 23, Firenze, Italy',
+//   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+//   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+//   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
-// //   // ES6 enhanced object literals
+//   // ES6 enhanced object literals
 
-// //   order:  function(starterIndex, mainIndex){
-// //     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]]
+//   order:  function(starterIndex, mainIndex){
+//     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]]
 
-// //   }
+//   }
   
 
 
-// // }
+// }
 
 
-// // // Array Destructuring
+// // Array Destructuring
 
-// // const arr = [1,2,3]
-// // console.log(arr)
+// const arr = [1,2,3]
+// console.log(arr)
 
-// // const a = arr[0]
-// // const b = arr[1]
-// // const c = arr[2]
+// const a = arr[0]
+// const b = arr[1]
+// const c = arr[2]
 
-// // console.log(a)
-// // console.log(b)
-// // console.log(c)
-
-
-// // const [x,y,z] = arr;
-
-// // // [] on the left side → means destructuring
-
-// // console.log(x)
-// // console.log(y)
-// // console.log(z)
+// console.log(a)
+// console.log(b)
+// console.log(c)
 
 
-// // const [l , m] = [10,20,30,]
+// const [x,y,z] = arr;
 
-// // const categories = ["Italian","Pizzeria","Vegetarian","Organic"]
+// // [] on the left side → means destructuring
 
-// // const [main, , secondary, ,] = categories
-
-// // console.log(categories)
-// // console.log(main)
-// // console.log(secondary)
-
-// // let main1 = "Italian";
-// // let secondary1 = "Vegetarian";
-
-// // // const temp = main1;
-// // // main1 = secondary1;
-// // // secondary1 = temp;
-
-// // [main1 , secondary1 ] = [secondary1, main1]
-
-// // console.log(main1 , secondary1)
-
-// // const [starter, mainCourse] = restaurant.order(2,0)
-// // console.log(starter, mainCourse);
+// console.log(x)
+// console.log(y)
+// console.log(z)
 
 
-// //  const nested = [2, 4, [5,6]]
-// // //  const [i, ,j] = nested
+// const [l , m] = [10,20,30,]
 
-// // //  console.log(i, j)
-// // const [i, ,[j,k]] = nested;
+// const categories = ["Italian","Pizzeria","Vegetarian","Organic"]
 
-// // console.log(i,j,k);
+// const [main, , secondary, ,] = categories
+
+// console.log(categories)
+// console.log(main)
+// console.log(secondary)
+
+// let main1 = "Italian";
+// let secondary1 = "Vegetarian";
+
+// // const temp = main1;
+// // main1 = secondary1;
+// // secondary1 = temp;
+
+// [main1 , secondary1 ] = [secondary1, main1]
+
+// console.log(main1 , secondary1)
+
+// const [starter, mainCourse] = restaurant.order(2,0)
+// console.log(starter, mainCourse);
+
+
+//  const nested = [2, 4, [5,6]]
+// //  const [i, ,j] = nested
+
+// //  console.log(i, j)
+// const [i, ,[j,k]] = nested;
+
+// console.log(i,j,k);
 
 
 // const restaurant = {
@@ -237,20 +237,36 @@
 // Task 5 — Complex Mixed Destructuring (Interview Level)
 
 
-const restaurant = {
-  name: "Italiano",
-  menu: ["Pizza", "Pasta", "Risotto"],
-  location: {
-    city: "Rome",
-    country: "Italy"
+// const restaurant = {
+//   name: "Italiano",
+//   menu: ["Pizza", "Pasta", "Risotto"],
+//   location: {
+//     city: "Rome",
+//     country: "Italy"
+//   }
+// };
+
+// // const { name: restaurantName, menu: [mainDish], location: { city } } = restaurant;
+
+// // console.log(restaurantName, mainDish, city);
+
+// const { name:restaurantName, menu:[, ,lastDish], location:{country}} = restaurant;
+
+// console.log(restaurantName, lastDish, country);
+
+
+// Task 6 — Real Backend Pattern
+
+const req = {
+  body: {
+    username: "vishv",
+    password: "123",
+    roles: ["user", "admin"]
   }
 };
 
-// const { name: restaurantName, menu: [mainDish], location: { city } } = restaurant;
 
-// console.log(restaurantName, mainDish, city);
+const { body:{username, password, roles:[,secondaryRole]}} = req;
 
-const { name:restaurantName, menu:[, ,lastDish], location:{country}} = restaurant;
-
-console.log(restaurantName, lastDish, country);
+console.log(username,password,secondaryRole)
 
