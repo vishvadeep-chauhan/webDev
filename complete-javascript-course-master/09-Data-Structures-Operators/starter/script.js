@@ -255,18 +255,134 @@
 // console.log(restaurantName, lastDish, country);
 
 
-// Task 6 — Real Backend Pattern
+// // Task 6 — Real Backend Pattern
 
-const req = {
-  body: {
-    username: "vishv",
-    password: "123",
-    roles: ["user", "admin"]
-  }
+// const req = {
+//   body: {
+//     username: "vishv",
+//     password: "123",
+//     roles: ["user", "admin"]
+//   }
+// };
+
+
+// const { body:{username, password, roles:[,secondaryRole]}} = req;
+
+// console.log(username,password,secondaryRole)
+
+// ---------------------------------------------------------
+// ---------------------------------------------------------
+
+
+// Task 1 — Function + Object Destructuring
+
+// Create a function that receives a user object and destructures inside the function.
+
+// const user = {
+//   name: "Vishv",
+//   age: 22,
+//   city: "Delhi"
+// };
+
+// Function should print:
+
+// Vishv is 22 years old from Delhi
+
+// Requirement:
+
+// function printUser({ name, age, city })
+
+// ---------------------------------------------------------
+// const user = {
+//   name: "Vishv",
+//   age: 22,
+//   city: "Delhi"
+// };
+
+// const printUser = ({name , age , city}) => {
+
+// return `${name} is ${age} years old from ${city}`
+
+
+// };
+
+// console.log(printUser(user));
+// ---------------------------------------------------------
+// ---------------------------------------------------------
+
+// Task 2 — Function + Array Destructuring
+
+// Create a function that receives an array.
+
+// const numbers = [10, 20, 30];
+
+// Inside the function destructure:
+
+// first
+// second
+
+// Print:
+
+// First: 10
+// Second: 20
+
+// Function signature:
+
+// function showNumbers([first, second])
+// ---------------------------------------------------------
+
+// const numbers = [10, 20, 30];
+
+// const showNumbers = ([first , second]) =>{
+
+//   return `${first}, ${second}`
+
+// }
+
+// console.log(showNumbers(numbers));
+
+
+
+// ---------------------------------------------------------
+// ---------------------------------------------------------
+
+// Task 3 — Function + Object + Array
+// const product = {
+//   title: "Laptop",
+//   price: 50000,
+//   tags: ["electronics", "computer"]
+// };
+
+// Create function:
+
+// function printProduct(...)
+
+// Destructure:
+
+// title
+// price
+// first tag → category
+
+// Expected output:
+
+// Laptop costs 50000 and belongs to electronics category
+
+// ---------------------------------------------------------
+
+
+const product = {
+  title: "Laptop",
+  price: 50000,
+  tags: ["electronics", "computer"]
 };
 
+const printProduct = ({title , price, tags:[firstTag , secondTag]}) =>{
 
-const { body:{username, password, roles:[,secondaryRole]}} = req;
+  return `${title} costs ${price} and belongs to ${firstTag} category`
+}
 
-console.log(username,password,secondaryRole)
+console.log(printProduct(product))
+
+// ---------------------------------------------------------
+// ---------------------------------------------------------
 
