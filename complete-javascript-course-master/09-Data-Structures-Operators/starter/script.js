@@ -1,4 +1,80 @@
 
+// // const restaurant = {
+// //   name: 'Classico Italiano',
+// //   location: 'Via Angelo Tavanti 23, Firenze, Italy',
+// //   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+// //   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+// //   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+
+// //   // ES6 enhanced object literals
+
+// //   order:  function(starterIndex, mainIndex){
+// //     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]]
+
+// //   }
+  
+
+
+// // }
+
+
+// // // Array Destructuring
+
+// // const arr = [1,2,3]
+// // console.log(arr)
+
+// // const a = arr[0]
+// // const b = arr[1]
+// // const c = arr[2]
+
+// // console.log(a)
+// // console.log(b)
+// // console.log(c)
+
+
+// // const [x,y,z] = arr;
+
+// // // [] on the left side → means destructuring
+
+// // console.log(x)
+// // console.log(y)
+// // console.log(z)
+
+
+// // const [l , m] = [10,20,30,]
+
+// // const categories = ["Italian","Pizzeria","Vegetarian","Organic"]
+
+// // const [main, , secondary, ,] = categories
+
+// // console.log(categories)
+// // console.log(main)
+// // console.log(secondary)
+
+// // let main1 = "Italian";
+// // let secondary1 = "Vegetarian";
+
+// // // const temp = main1;
+// // // main1 = secondary1;
+// // // secondary1 = temp;
+
+// // [main1 , secondary1 ] = [secondary1, main1]
+
+// // console.log(main1 , secondary1)
+
+// // const [starter, mainCourse] = restaurant.order(2,0)
+// // console.log(starter, mainCourse);
+
+
+// //  const nested = [2, 4, [5,6]]
+// // //  const [i, ,j] = nested
+
+// // //  console.log(i, j)
+// // const [i, ,[j,k]] = nested;
+
+// // console.log(i,j,k);
+
+
 // const restaurant = {
 //   name: 'Classico Italiano',
 //   location: 'Via Angelo Tavanti 23, Firenze, Italy',
@@ -7,71 +83,105 @@
 //   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
 //   // ES6 enhanced object literals
+//   openingHours: {
+//     thu: {
+//       open: 12,
+//       close: 22,
+//     }, 
+//     fri: {
+//       open: 11,
+//       close: 23,
 
-//   order:  function(starterIndex, mainIndex){
-//     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]]
+//     },
+//     sat: {
+//       open: 0, // open 24 hour
+//       close: 24
+//     }
+//   },
+
+//   order: function ( starterIndex , mainIndex){
+//     return [this.starterMenu [starterIndex]], this.mainMenu[mainIndex]
 
 //   }
-  
+// };
+
+// const {name, openingHours, categories} = restaurant
+
+// console.log(name, openingHours, categories);
 
 
-// }
+
+// const {
+//   name: restaurantName,
+//   openingHoursz: hours,
+//   categories: tags
+// } = restaurant;
+
+// console.log(restaurantName, hours, tags);
+
+// // default values 
+// const {menu = [] , starterMenu : starters = []} = restaurant;
+
+// console.log(menu, starters); 
+
+// // mutating variables
+// let a = 111;
+// let b = 999;
+
+// const obj = { a: 23, b: 7, c: 14 };
+
+// console.log(a,b);
 
 
-// // Array Destructuring
+// // {a ,b} = obj ; // got an error
 
-// const arr = [1,2,3]
-// console.log(arr)
+ 
+// ({a, b} = obj) ; 
 
-// const a = arr[0]
-// const b = arr[1]
-// const c = arr[2]
+// console.log(a, b);
 
-// console.log(a)
-// console.log(b)
-// console.log(c)
+// // Nested objects
 
+// const { 
+//   fri: { open: o,  close: c },
+// } = openingHours;
 
-// const [x,y,z] = arr;
-
-// // [] on the left side → means destructuring
-
-// console.log(x)
-// console.log(y)
-// console.log(z)
+// console.log(o,c)
 
 
-// const [l , m] = [10,20,30,]
+// const reqBody = {
+//   name: "Vishv",
+//   email: "vishv@gmail.com",
+//   password: "123456",
+//   age: 22,
+//   address: {
+//     city: "Delhi",
+//     country: "India"
+//   }
+// };
 
-// const categories = ["Italian","Pizzeria","Vegetarian","Organic"]
+// const { name, email, password } = reqBody 
+// const { name : userName , email , password} = reqBody;
+// const { name : userName , email , password , role = "user"} = reqBody;
 
-// const [main, , secondary, ,] = categories
+// const { 
+//   name: userName, 
+//   email , 
+//   password , 
+//   role = "user" , 
+//   address: {city , country}
+// } = reqBody; 
 
-// console.log(categories)
-// console.log(main)
-// console.log(secondary)
+// console.log(userName , email , password, role , city , country ) ;
 
-// let main1 = "Italian";
-// let secondary1 = "Vegetarian";
+// console.log(` ${role} ${userName} from ${city}, ${country} registered with email ${email}`)
 
-// // const temp = main1;
-// // main1 = secondary1;
-// // secondary1 = temp;
-
-// [main1 , secondary1 ] = [secondary1, main1]
-
-// console.log(main1 , secondary1)
-
-// const [starter, mainCourse] = restaurant.order(2,0)
-// console.log(starter, mainCourse);
-
-
-//  const nested = [2, 4, [5,6]]
-// //  const [i, ,j] = nested
-
-// //  console.log(i, j)
-// const [i, ,[j,k]] = nested;
-
-// console.log(i,j,k);
+// console.log(`User ${userName} from ${city}, ${country} registered with email ${email}`)
 
 
+const user = {
+  name: "Vishv",
+  skills: ["HTML", "CSS", "JavaScript"]
+};
+
+const { name , skills: [primarySkill , secondarySkill]} 
