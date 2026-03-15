@@ -213,18 +213,27 @@
 // const [{username, age }] = users;
 // console.log(username, age)
 
-const response = {
-  status: 200,
-  data: {
-    users: [
-      { name: "Vishv", city: "Delhi" },
-      { name: "Aman", city: "Mumbai" }
-    ]
-  }
-};
+// const response = {
+//   status: 200,
+//   data: {
+//     users: [
+//       { name: "Vishv", city: "Delhi" },
+//       { name: "Aman", city: "Mumbai" }
+//     ]
+//   }
+// };
 
-const {status, data:{users:[{name, city}]}} = response;
+// const {status, 
+//   data:{
+//     users:[
+//       {name : name1, city : city1}, 
+//       {name : name2 , city : city2}
+//     ]
+//   }
+// } = response;
 
-console.log(name, city)
+// console.log(name1, city1, name2, city2)
+
+
 
 
