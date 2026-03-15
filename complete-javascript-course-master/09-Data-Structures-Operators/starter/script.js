@@ -234,6 +234,23 @@
 
 // console.log(name1, city1, name2, city2)
 
+// Task 5 — Complex Mixed Destructuring (Interview Level)
 
 
+const restaurant = {
+  name: "Italiano",
+  menu: ["Pizza", "Pasta", "Risotto"],
+  location: {
+    city: "Rome",
+    country: "Italy"
+  }
+};
+
+// const { name: restaurantName, menu: [mainDish], location: { city } } = restaurant;
+
+// console.log(restaurantName, mainDish, city);
+
+const { name:restaurantName, menu:[, ,lastDish], location:{country}} = restaurant;
+
+console.log(restaurantName, lastDish, country);
 
