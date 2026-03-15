@@ -179,9 +179,52 @@
 // console.log(`User ${userName} from ${city}, ${country} registered with email ${email}`)
 
 
-const user = {
-  name: "Vishv",
-  skills: ["HTML", "CSS", "JavaScript"]
+// const user = {
+//   name: "Vishv",
+//   skills: ["HTML", "CSS", "JavaScript"]
+// };
+
+// const { name , skills: [primarySkill , secondarySkill]} = user
+
+// console.log(name , primarySkill, secondarySkill);
+
+// const product = {
+//   title: "Laptop",
+//   price: 50000,
+//   specs: {
+//     ram: "16GB",
+//     storage: "512GB"
+//   },
+//   tags: ["electronics", "computer", "tech"]
+// };
+
+// const {title, specs:{ram}, tags:[category] } = product
+
+
+
+// console.log(title, ram, category)
+
+
+// const users = [
+//   { username: "vishv", age: 22 },
+//   { username: "rahul", age: 25 }
+// ];
+
+// const [{username, age }] = users;
+// console.log(username, age)
+
+const response = {
+  status: 200,
+  data: {
+    users: [
+      { name: "Vishv", city: "Delhi" },
+      { name: "Aman", city: "Mumbai" }
+    ]
+  }
 };
 
-const { name , skills: [primarySkill , secondarySkill]} 
+const {status, data:{users:[{name, city}]}} = response;
+
+console.log(name, city)
+
+
