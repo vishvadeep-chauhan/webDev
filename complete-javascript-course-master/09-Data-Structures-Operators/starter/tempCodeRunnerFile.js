@@ -1,4 +1,4 @@
-const arr =  [2,3,4];
+// const arr =  [2,3,4];
 // const [x,y,z] = arr;
 
 // console.log(x,y,z)
@@ -46,3 +46,6 @@ const arr =  [2,3,4];
 // const [starter , mainCourse] = order(2,0);
 
 // console.log(starter, mainCourse);
+
+
+

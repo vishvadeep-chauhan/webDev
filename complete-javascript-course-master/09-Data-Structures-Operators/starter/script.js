@@ -367,26 +367,178 @@
 // console.log(printProduct(product))
 
 // ---------------------------------------------------------
+
+
+
+// const arr = [7,8,9];
+
+// const badNewArr = [1,2,arr[0], arr[1], arr[2]]
+// console.log(badNewArr)
+
+// const newArr = [1,2, ...arr];
+
+// console.log(newArr)
+
+// console.log(...newArr)
+
+// const newManu = [...restaurant.mainMenu, 'Gnocci']
+// console.log(newManu);
+
+// // copyArray
+
+
+// const mainMenuCopy = [...restaurant.mainMenu];
+
+// const menu = [ ...restaurant.starterMenu, ...restaurant.mainMenu ]
+
+// console.log(menu)
+
+// const str = 'jonas'
+
+// const letter = [...str, ' ' , 's.']
+
+// console.log(letter)
+// console.log(...str);
+
+// // console.log(`${...str} `)
+
+// const ingredients =  [prompt("let's make pasta! ingredients 1?") , 
+//   prompt(" ingredients 2?"),
+//   prompt(" ingredients 3?")
+
+// ]
+// // console.log(ingredients);
+
+// // restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
+
+// restaurant.orderPasta(...ingredients);
+
+// const newRestaurant = {
+//   foundedIn: 1998,
+//   ...restaurant,
+//   founder: 'Giuseppe'
+// };
+
+// --------------------------------------------------
+
+// Given:
+
+// const user = {
+//  name: "Vishv",
+//  age: 20
+// }
+
+// // Create a new object that adds:
+// // role: "developer"
+// const newUser = {
+//   ...user,
+//   role: "developer"
+
+// }
+// const newUserCopy = {...newUser};
+// newUserCopy.age = 25;
+// console.log(newUserCopy)
+
+// console.log(newUser);
+
+// Expected result:
+
+// {name:"Vishv", age:20, role:"developer"}
+
+// Use the spread operator.
+
+// --------------------------------------------------
+// const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+// console.log(menu);
+// --------------------------------------------------
+// Task -1
+
+// const dbUser = {
+//   id: 101,
+//   name: "Vishv",
+//   email: "vishv@gmail.com",
+//   role: "user",
+//   isActive: true
+// };
+
+// const updatePayload = {
+//   role: "admin",
+//   isActive: false
+// };
+
+
+
+// const updatedUser = { 
+//   ...dbUser
+// };
+
+// updatedUser.role = "admin"
+// updatedUser.isActive = "false"
+
+
+// console.log(updatedUser);
+
+// // --------------------------------------------------
+
+// // task 2
+// const menu = ["Pizza", "Pasta", "Risotto"];
+
+// const newManu = ["Gnocci" , ...menu , "Tiramisu"]
+
+// console.log(newManu)
+
+// // --------------------------------------------------
+// // task 3
+
+// const apiProducts = ["Laptop","Phone","Tablet"];
+// const dbProducts = ["Keyboard","Mouse"];
+
+// const allProducts = [...apiProducts, ...dbProducts];
+
+// console.log(allProducts)
+
+// --------------------------------------------------
+// task 4 
+
+
+// const product = {
+//   title: "Laptop",
+//   price: 50000,
+//   specs: {
+//     ram: "16GB",
+//     storage: "512GB"
+//   }
+// };
+
+
+// const copyProduct = {
+//   ...product
+// }
+
+// copyProduct.price = 55000;
+
+// console.log(copyProduct)
+
+// // --------------------------------------------------
+// // task 5
+
+// function createUser(name, age, role){
+
+//   console.log(name,age,role)
+
+// }
+
+// const userData = ["Vishv",22,"developer"];
+
+// createUser(...userData);
+
+// --------------------------------------------------
+
 // ---------------------------------------------------------
 
 
 'use strict';
 
-const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
-const openingHours = {
-  [weekdays[3]]: {
-    open: 12,
-    close: 22,
-  },
-  [weekdays[4]]: {
-    open: 11,
-    close: 23,
-  },
-  [weekdays[5]]: {
-    open: 0, // Open 24 hours
-    close: 24,
-  },
-};
 
 const restaurant = {
   name: 'Classico Italiano',
@@ -395,8 +547,23 @@ const restaurant = {
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
+  openingHours: {
+    thu:{
+      open: 12,
+      close: 22,
+    },
+    fri: {
+       open: 11,
+        close: 23, 
+    },
+    sat: {
+      open: 0,
+      close: 24,
+    },
+  },
+
+
   // ES6 enhanced object literals
-  openingHours,
 
   order(starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
@@ -408,48 +575,54 @@ const restaurant = {
     );
   },
 
-  orderPasta(ing1, ing2, ing3) {
-    console.log(
-      `Here is your declicious pasta with ${ing1}, ${ing2} and ${ing3}`
-    );
+  orderPasta: function(ing1 , ing2, ing3){
+    console.log(`Here is your delicious pasta with ${ing1}, ${ing2}, ${ing3}`)
   },
 
-  orderPizza(mainIngredient, ...otherIngredients) {
-    console.log(mainIngredient);
-    console.log(otherIngredients);
+  orderPizza: function(mainIngredient, ...otherIngredients){
+    console.log(mainIngredient)
+    console.log(otherIngredients)
+
   },
+
 };
 
 
-const arr = [7,8,9];
+// ---------------------
 
-const badNewArr = [1,2,arr[0], arr[1], arr[2]]
-console.log(badNewArr)
+// const arr = [1,2, ...[3,4,5]];
 
-const newArr = [1,2, ...arr];
-
-console.log(newArr)
-
-console.log(...newArr)
-
-const newManu = [...restaurant.mainMenu, 'Gnocci']
-console.log(newManu);
-
-// copyArray
+// const [a,b, ...others] = [1,2,3,4,5,6,7];
+// console.log(a,b,others)
 
 
-const mainMenuCopy = [...restaurant.mainMenu];
+const [Pizza, ,Risotto, ...otherFood ]= [...restaurant.mainMenu, ...restaurant.starterMenu, ]
 
-const menu = [ ...restaurant.starterMenu, ...restaurant.mainMenu ]
+console.log(Pizza, Risotto, otherFood)
 
-console.log(menu)
+const  {sat, ...weekdays} = restaurant.openingHours ;
 
-const str = 'jonas'
+console.log(weekdays);
 
-const letter = [...str, ' ' , 's.']
 
-console.log(letter)
-console.log(...str);
+const add = function(...numbers){
+ let sum = 0;
+ for(let i = 0; i<numbers.length; i++) sum += numbers[i];
+ console.log(sum)
 
-// console.log(`${...str} `)
+}
+
+add(2,3)
+add(5,3,7,2)
+add(8,5,3,6,4,36,7,4,3,5,3)
+
+const x = [23,5,7];
+add(...x);
+
+
+
+restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
+restaurant.orderPizza('mushrooms'); 
+
+
 
